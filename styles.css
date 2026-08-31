@@ -169,3 +169,101 @@ img { max-width: 100%; }
   font-size: 12px;
 }
 .back-link { display: inline-block; margin-bottom: 28px; font-family: 'Chivo Mono', monospace; font-size: 12.5px; color: var(--muted); }
+
+/* PICK PHOTO CARD — product photo as a fading background behind the pick heading */
+.pick-card {
+  margin: 18px 0 8px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+}
+.pick-photo {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background-color: #eef1ef;
+  background-size: cover;
+  background-position: center;
+}
+.pick-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(18, 24, 26, 0) 32%, rgba(18, 24, 26, 0.6) 62%, var(--surface-2) 97%);
+}
+.pick-photo-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  padding: 22px 26px 18px;
+}
+.pick-photo-text .pick-eyebrow {
+  font-family: 'Chivo Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent2);
+}
+.pick-photo-text h2 {
+  margin: 6px 0 0;
+  font-size: 25px;
+}
+.pick-photo-text .pick-price {
+  margin-left: 8px;
+  color: var(--accent);
+  font-weight: 400;
+  font-size: 17px;
+}
+.pick-expand {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(18, 24, 26, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #eef2f0;
+  cursor: pointer;
+  backdrop-filter: blur(2px);
+}
+.pick-expand:hover { background: rgba(18, 24, 26, 0.78); }
+.pick-body { padding: 18px 26px 24px; }
+.pick-body p { margin: 0 0 14px; }
+.pick-body .affiliate-slot { margin-bottom: 0; }
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 13, 14, 0.92);
+  padding: 40px;
+  z-index: 100;
+}
+.lightbox.is-open { display: flex; }
+.lightbox img {
+  max-width: min(900px, 100%);
+  max-height: 100%;
+  border-radius: 8px;
+  background: #eef1ef;
+}
+.lightbox-close {
+  position: absolute;
+  top: 22px;
+  right: 26px;
+  background: none;
+  border: none;
+  color: #eef2f0;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+}
