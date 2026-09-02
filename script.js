@@ -1,32 +1,72 @@
 document.addEventListener('DOMContentLoaded', function () {
   var lightbox = document.getElementById('lightbox');
-  if (!lightbox) return;
+  var lightboxImg = document.getElementById('lightboxImg');
+  var lightboxClose = document.getElementById('lightboxClose');
 
-  var img = document.getElementById('lightboxImg');
-  var closeBtn = document.getElementById('lightboxClose');
-
-  function open(src, alt) {
-    img.src = src;
-    img.alt = alt || '';
+  function openLightbox(src, alt) {
+    if (!lightbox) return;
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || '';
     lightbox.classList.add('is-open');
   }
 
-  function close() {
+  function closeLightbox() {
+    if (!lightbox) return;
     lightbox.classList.remove('is-open');
-    img.src = '';
+    lightboxImg.src = '';
   }
 
+  if (lightbox) {
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  }
+
+  // Single static photo + lightbox (no slider)
   document.querySelectorAll('[data-lightbox]').forEach(function (btn) {
     btn.addEventListener('click', function () {
-      open(btn.getAttribute('data-lightbox'), btn.getAttribute('data-alt'));
+      openLightbox(btn.getAttribute('data-lightbox'), btn.getAttribute('data-alt'));
     });
   });
 
-  closeBtn.addEventListener('click', close);
-  lightbox.addEventListener('click', function (e) {
-    if (e.target === lightbox) close();
-  });
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') close();
+  // Auto-advancing photo sliders inside .pick-card
+  document.querySelectorAll('.pick-slides').forEach(function (slidesEl) {
+    var slides = Array.prototype.slice.call(slidesEl.querySelectorAll('.pick-slide'));
+    var dotsWrap = document.querySelector('.pick-dots[data-slider="' + slidesEl.id + '"]');
+    var dots = dotsWrap ? Array.prototype.slice.call(dotsWrap.querySelectorAll('.pick-dot')) : [];
+    var current = 0;
+    var timer;
+
+    function show(i) {
+      current = (i + slides.length) % slides.length;
+      slides.forEach(function (s, idx) { s.classList.toggle('is-active', idx === current); });
+      dots.forEach(function (d, idx) { d.classList.toggle('is-active', idx === current); });
+    }
+
+    function restart() {
+      clearInterval(timer);
+      timer = setInterval(function () { show(current + 1); }, 3000);
+    }
+
+    dots.forEach(function (d) {
+      d.addEventListener('click', function () {
+        show(parseInt(d.getAttribute('data-slide'), 10));
+        restart();
+      });
+    });
+
+    if (slides.length > 1) restart();
+
+    var expandBtn = document.querySelector('[data-lightbox-current="' + slidesEl.id + '"]');
+    if (expandBtn) {
+      expandBtn.addEventListener('click', function () {
+        var active = slides[current];
+        openLightbox(active.getAttribute('data-full'), active.getAttribute('data-alt'));
+      });
+    }
   });
 });
