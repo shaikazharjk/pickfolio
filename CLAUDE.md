@@ -27,6 +27,9 @@ Gaming / office / streaming desk setups. Content targets **parents-are-not-the-a
 
 Each has a live guide page in `/guides/` with budget/mid/premium picks. **Verify current pricing/availability of any named product model before publishing further changes** — the picks were researched at a point in time and may drift.
 
+### Desks — 8th category, no guide yet
+The chair guide was originally titled "Chairs & Desks" everywhere (nav, footer, homepage) despite covering only chairs (Matchspel, ThunderX3 Flex Pro, Embody) — no desk products. This was corrected: the guide/nav/footer label is now just "Chairs", and **Desks** was split out as its own category, shown on the homepage category grid as a "coming soon" card (no guide page or content exists for it yet). Write `/guides/desks.html` and wire it up the same way as the other 7 when desk product research is ready.
+
 ## Site structure
 
 ```
@@ -49,7 +52,8 @@ All internal links use **absolute root paths** (`/guides/x.html`, `/styles.css`)
 ## Content still outstanding
 
 - `/gear-i-use.html` is a placeholder — needs the user's real, current desk setup gear list.
-- Site nav links to category pages (Chairs & Desks, Monitors, etc.) that don't exist yet as their own landing pages — currently they route straight to the single matching guide. Build these out once there's more than one guide per category.
+- Site nav links to category pages (Chairs, Monitors, etc.) that don't exist yet as their own landing pages — currently they route straight to the single matching guide. Build these out once there's more than one guide per category.
+- Desks has no guide page yet — see "Desks — 8th category" above.
 - TikTok and YouTube handles are still bracketed placeholders (`[YOUR HANDLE]`) in the footer — replace once accounts are created.
 
 ## How the site was built
