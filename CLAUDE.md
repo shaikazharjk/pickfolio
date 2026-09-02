@@ -33,8 +33,7 @@ The chair guide was originally titled "Chairs & Desks" everywhere (nav, footer, 
 ## Site structure
 
 ```
-/index.html              homepage — hero, category grid, guide list, "gear I use" callout
-/gear-i-use.html         PLACEHOLDER — needs real content once the user's actual desk setup is finalized
+/index.html              homepage — hero, category grid, guide list
 /styles.css              shared stylesheet, all design tokens
 /guides/*.html           7 buying-guide articles, one per priority category
 ```
@@ -51,7 +50,6 @@ All internal links use **absolute root paths** (`/guides/x.html`, `/styles.css`)
 
 ## Content still outstanding
 
-- `/gear-i-use.html` is a placeholder — needs the user's real, current desk setup gear list.
 - Site nav links to category pages (Chairs, Monitors, etc.) that don't exist yet as their own landing pages — currently they route straight to the single matching guide. Build these out once there's more than one guide per category.
 - Desks has no guide page yet — see "Desks — 8th category" above.
 - TikTok and YouTube handles are still bracketed placeholders (`[YOUR HANDLE]`) in the footer — replace once accounts are created.
@@ -69,3 +67,4 @@ This site is one piece of a larger 12-week content rollout (site + YouTube + Tik
 - Keep the dark/gold/teal visual system consistent across any new page.
 - New affiliate product mentions always get an `.affiliate-slot` placeholder unless the user confirms Associates approval is live.
 - Don't invent pricing, specs, or availability for products — flag it as needing verification instead.
+- No personal "gear I use" / "my setup" content on this site — the user explicitly does not want to show their own setup. The former `/gear-i-use.html` page and every "See my setup" CTA, nav link, and homepage callout have been removed. Don't reintroduce this concept.
