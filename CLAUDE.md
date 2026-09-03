@@ -42,7 +42,7 @@ All internal links use **absolute root paths** (`/guides/x.html`, `/styles.css`)
 
 ## Amazon Associates status — IMPORTANT
 
-- **Not yet approved.** Every product mention in every guide has a `<div class="affiliate-slot">Amazon link placeholder — add after Associates approval</div>` marker instead of a real link. Do not replace these until the user confirms they've been approved.
+- **Not yet approved.** Every product mention in every guide has a `<div class="affiliate-slot">Amazon link - coming soon</div>` marker instead of a real link. Do not replace these until the user confirms they've been approved.
 - Once approved: use Amazon SiteStripe to generate real affiliate links and replace each placeholder.
 - **180-day rule:** once approved, the user has 180 days to generate 3 qualifying sales or the account closes. Track this once approval happens.
 - The required FTC/Amazon affiliate disclosure is already in the site footer (`styles.css` `.disclosure` + the footer markup in `build.py`) — keep it on every page if the footer is ever changed or removed.
@@ -52,7 +52,6 @@ All internal links use **absolute root paths** (`/guides/x.html`, `/styles.css`)
 
 - Site nav links to category pages (Chairs, Monitors, etc.) that don't exist yet as their own landing pages — currently they route straight to the single matching guide. Build these out once there's more than one guide per category.
 - Desks has no guide page yet — see "Desks — 8th category" above.
-- TikTok and YouTube handles are still bracketed placeholders (`[YOUR HANDLE]`) in the footer — replace once accounts are created.
 
 ## How the site was built
 
