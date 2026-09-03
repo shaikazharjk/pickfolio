@@ -9,7 +9,7 @@ An Amazon Associates affiliate website. Domain: **pickfolio.co** (purchased, hos
 ## Brand
 
 - **Name:** Pickfolio — chosen deliberately generic (not tied to "gaming" or "gear") so the brand can expand into other product categories later, not just tech/desk setups.
-- **Visual identity:** dark, technical "spec sheet" aesthetic. Fonts: Chivo (display/headings), Chivo Mono (labels/eyebrows/data), Work Sans (body). Palette: background `#12181a`, surface `#161f21`, accent gold `#d9a441`, accent teal `#4fae94`, muted text `#8b9a96`. Logo is a folio/document-stack icon (not the earlier house/nest icon from a discarded brand name — do not reintroduce that).
+- **Visual identity:** dark purple/black glass aesthetic (rebranded from an earlier gold/teal "spec sheet" look). Fonts: Chivo (display/headings), Chivo Mono (labels/eyebrows/data), Work Sans (body). Palette: background `#0d0a17` with a soft purple/indigo radial glow, glass surfaces `rgba(255,255,255,.045)` with `backdrop-filter: blur()` and a `rgba(255,255,255,.09)` hairline border, accent lavender `#c9a6f7`, accent pink `#e6a5c9`, muted text `#a99cc4`. Colors are intentionally toned/desaturated (not saturated neon purple) so body text stays readable on the dark ground. Logo is a folio/document-stack icon (not the earlier house/nest icon from a discarded brand name — do not reintroduce that).
 - Full design tokens live in `styles.css` at the project root — reuse these variables for any new page rather than inventing new colors.
 
 ## Current niche and scope
