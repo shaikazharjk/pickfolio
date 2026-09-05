@@ -188,6 +188,22 @@ img { max-width: 100%; }
   font-family: 'Chivo Mono', monospace;
   font-size: 12px;
 }
+.buy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 18px 0 8px;
+  padding: 11px 20px;
+  border-radius: 6px;
+  background: linear-gradient(180deg, var(--accent), var(--accent2));
+  color: var(--accent-ink);
+  font-family: 'Chivo Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity .15s ease;
+}
+.buy-btn:hover { opacity: .88; }
 .back-link { display: inline-block; margin-bottom: 28px; font-family: 'Chivo Mono', monospace; font-size: 12.5px; color: var(--muted); }
 
 /* PICK PHOTO CARD — product photo as a fading background behind the pick heading */

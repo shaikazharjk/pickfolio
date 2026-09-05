@@ -42,9 +42,15 @@ All internal links use **absolute root paths** (`/guides/x.html`, `/styles.css`)
 
 ## Amazon Associates status — IMPORTANT
 
-- **Not yet approved.** Every product mention in every guide has a `<div class="affiliate-slot">Amazon link - coming soon</div>` marker instead of a real link. Do not replace these until the user confirms they've been approved.
-- Once approved: use Amazon SiteStripe to generate real affiliate links and replace each placeholder.
-- **180-day rule:** once approved, the user has 180 days to generate 3 qualifying sales or the account closes. Track this once approval happens.
+- **Approved.** Store ID `pickfolio-20`. Approved 2026-09-05; tax info (W-8BEN, foreign-person status) validated at 0% withholding; payout method is a Wise USD virtual account (routes to a Malaysian bank).
+- **180-day rule: clock is running from 2026-09-05.** Need 3 qualifying sales by ~2027-03-04 or the account closes.
+- All `<div class="affiliate-slot">` placeholders across all 7 guides have been replaced with real links in the format `https://www.amazon.com/dp/{ASIN}?tag=pickfolio-20`, rendered via the `.buy-btn` CSS class in `styles.css`. Links use `target="_blank" rel="noopener sponsored nofollow"`.
+- **Product swaps made during linking** (original picks weren't actually sold on Amazon or were fabricated/OOS — verify before assuming any pick is final):
+  - Chairs guide: all 3 original picks (IKEA Matchspel, ThunderX3 Flex Pro, Logitech G x Herman Miller Embody) aren't sold on Amazon. Replaced with BestOffice Ergonomic Gaming Chair (budget), Razer Enki X (mid), Herman Miller Aeron Size B Graphite (premium — same brand, not the gaming-styled Embody variant).
+  - Keyboards guide: Havit KB487L and Keychron C2 Pro are real but permanently out of stock. Replaced with Redragon K556 (budget) and RK Royal Kludge RK100 (mid). Royal Kludge R65 pick unchanged.
+  - Webcams guide: "Elgato Facecam Neo" doesn't exist as a real product (likely confused with Key Light Neo). Replaced with Logitech Brio 101 (budget). Emeet Pixy and Yololiv Yolocam S3 picks unchanged.
+  - Monitor arms, microphones, lighting, and USB-C hubs guides: all original picks confirmed real and in stock, no swaps needed.
+- New product photos for swapped picks were sourced from each product's official Amazon listing image and saved to `/images/<category>/`.
 - The required FTC/Amazon affiliate disclosure is already in the site footer (`styles.css` `.disclosure` + the footer markup in `build.py`) — keep it on every page if the footer is ever changed or removed.
 - Commission on this product category (computers/electronics) is a relatively low ~2.5-3%, so the content strategy leans on volume/consistency, not virality.
 
